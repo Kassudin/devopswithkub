@@ -12,6 +12,17 @@ spec:
       labels:
         app: log-output
     spec:
+      volumes:
+        - name: shared-log
+          emptyDir: {}
       containers:
-      - name: log-output
-        image: kassudin/log-output:1.2
+      - name: log-generator
+        image: kassudin/log-output-generator:1.2
+        volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
+      - name: log-reader
+        image: kassudin/log-reader:1.2
+        volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
