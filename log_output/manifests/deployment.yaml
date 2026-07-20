@@ -14,15 +14,16 @@ spec:
     spec:
       volumes:
         - name: shared-log
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: image-claim
       containers:
       - name: log-generator
-        image: kassudin/log-output-generator:1.2
+        image: kassudin/log-output-generator:1.3
         volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files
       - name: log-reader
-        image: kassudin/log-reader:1.2
+        image: kassudin/log-reader:1.3
         volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files

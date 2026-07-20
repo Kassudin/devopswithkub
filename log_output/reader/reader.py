@@ -4,17 +4,27 @@ from flask import Flask
 
 app = Flask(__name__)
 
-file_path = "/usr/src/app/files/output.txt"
+output_file = "/usr/src/app/files/output.txt"
+counter_file = "/usr/src/app/files/counter.txt"
 
+def read_file(path, default):
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            return file.read().strip()
+    except FileNotFoundError:
+        return default
 
 @app.route("/")
 def index():
-    try:
-        with open(file_path, "r", encoding="utf-8") as file:
-            return file.read() + "\n"
-    except FileNotFoundError:
-        return "Waiting for log output...\n", 503
-
+    output = read_file(
+        output_file,
+        "Waiting for log output..."
+    )
+    counter = read_file(
+        counter_file,
+        "0"
+    )
+    return f"{output}\nPing / Pongs: {counter}\n"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 3000))
