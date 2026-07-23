@@ -29,8 +29,41 @@ def image():
 @app.route("/todo")
 def index():
     return """
-    <h1>Todo app</h1>
-    <img src="/todo/image" width="600" alt="Random image">
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Todo app</title>
+      </head>
+      <body>
+        <h1>Todo app</h1>
+
+        <img
+          src="/todo/image"
+          width="600"
+          alt="Random image"
+        >
+
+        <h2>Add a todo</h2>
+
+        <form>
+          <input
+            type="text"
+            name="todo"
+            maxlength="140"
+            placeholder="Write a todo"
+          >
+          <button type="button">Send</button>
+        </form>
+
+        <h2>Todos</h2>
+
+        <ul>
+          <li>Learn Kubernetes</li>
+          <li>Make dinner</li>
+          <li>Take a break</li>
+        </ul>
+      </body>
+    </html>
     """
 
 if __name__ == '__main__':
