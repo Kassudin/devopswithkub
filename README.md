@@ -17,3 +17,6 @@
 - [1.11.](https://github.com/kassudin/devopswithkub/tree/1.11)
 - [1.12.](https://github.com/kassudin/devopswithkub/tree/1.12/todo-app)
 - [1.13.](https://github.com/kassudin/devopswithkub/tree/1.13/todo-app)
+
+### Chapter 2
+- [2.1.](https://github.com/kassudin/devopswithkub/tree/2.1/logping)
