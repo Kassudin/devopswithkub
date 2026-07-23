@@ -1,11 +1,11 @@
 import os
-
+import urllib.request
 from flask import Flask
 
 app = Flask(__name__)
 
 output_file = "/usr/src/app/files/output.txt"
-counter_file = "/usr/src/app/files/counter.txt"
+pingpongurl = "http://ping-pong-svc:2345/pings"
 
 def read_file(path, default):
     try:
@@ -14,16 +14,18 @@ def read_file(path, default):
     except FileNotFoundError:
         return default
 
+def get_pong_count():
+    with urllib.request.urlopen(pingpongurl) as response:
+        return response.read().decode()
+
+
 @app.route("/")
 def index():
     output = read_file(
         output_file,
         "Waiting for log output..."
     )
-    counter = read_file(
-        counter_file,
-        "0"
-    )
+    counter = get_pong_count()
     return f"{output}\nPing / Pongs: {counter}\n"
 
 if __name__ == "__main__":
