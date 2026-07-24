@@ -20,3 +20,4 @@
 
 ### Chapter 2
 - [2.1.](https://github.com/kassudin/devopswithkub/tree/2.1/logping)
+- [2.2.](https://github.com/kassudin/devopswithkub/tree/2.2/todo-app)
