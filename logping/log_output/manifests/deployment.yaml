@@ -16,6 +16,12 @@ spec:
       volumes:
         - name: shared-log
           emptyDir: {}
+        - name: config
+          configMap:
+            name: config
+            items:
+              - key: information.txt
+                path: information.txt
       containers:
       - name: log-generator
         image: kassudin/log-output-generator:1.3
@@ -23,7 +29,16 @@ spec:
           - name: shared-log
             mountPath: /usr/src/app/files
       - name: log-reader
-        image: kassudin/log-reader:1.4
+        image: kassudin/log-reader:1.5
+        env:
+        - name: MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: MESSAGE
         volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files
+          - name: config
+            mountPath: /config
+            readOnly: true

@@ -5,7 +5,9 @@ from flask import Flask
 app = Flask(__name__)
 
 output_file = "/usr/src/app/files/output.txt"
+information_file = "/config/information.txt"
 pingpongurl = "http://ping-pong-svc:2345/pings"
+
 
 def read_file(path, default):
     try:
@@ -25,8 +27,18 @@ def index():
         output_file,
         "Waiting for log output..."
     )
+    information = read_file(
+        information_file,
+        "No information available."
+    )
+    message = os.environ.get("MESSAGE", "")
     counter = get_pong_count()
-    return f"{output}\nPing / Pongs: {counter}\n"
+    return (
+        f"file content: {information}\n"
+        f"env variable: MESSAGE={message}\n"
+        f"{output}\n"
+        f"Ping / Pongs: {counter}\n"
+    )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 3000))
