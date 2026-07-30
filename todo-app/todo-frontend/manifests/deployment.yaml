@@ -19,7 +19,18 @@ spec:
             claimName: todo-claim
       containers:
       - name: todo-app
-        image: kassudin/todo-app:1.3
+        image: kassudin/todo-app:1.4
+        env:
+          - name: IMAGE_URL
+            value: "https://picsum.photos/1200"
+          - name: BACKEND_URL
+            value: "http://todo-backend-svc:2345/todos"
+          - name: CACHE_DURATION
+            value: "600"
+          - name: PORT
+            value: "3000"
+          - name: IMAGE_FILE
+            value: "/usr/src/app/files/image.jpg"  
         volumeMounts:
             - name: todo-volume
               mountPath: /usr/src/app/files

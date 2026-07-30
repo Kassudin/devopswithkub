@@ -22,5 +22,5 @@ def add_todo():
     return "Todo created", 201
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 3000))
+    port = int(os.environ["PORT"])
     app.run(host="0.0.0.0", port=port)

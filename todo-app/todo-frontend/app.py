@@ -2,17 +2,15 @@ import os
 import json
 import time
 import urllib.request
-
 from flask import Flask, send_file, request, redirect
 
 
 app = Flask(__name__)
 
-image_url = "https://picsum.photos/1200"
-image_file = "/usr/src/app/files/image.jpg"
-backend_url = "http://todo-backend-svc:2345/todos"
-
-cache_duration = 60 * 10
+image_url = os.environ["IMAGE_URL"]
+image_file = os.environ["IMAGE_FILE"]
+backend_url = os.environ["BACKEND_URL"]
+cache_duration = int(os.environ["CACHE_DURATION"])
 
 def image_is_expired():
     if not os.path.exists(image_file):
@@ -65,7 +63,6 @@ def index():
     </ul>
     """
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 3000))
-    print(f"Server started in port {port}", flush=True)
+if __name__ == "__main__":
+    port = int(os.environ["PORT"])
     app.run(host="0.0.0.0", port=port)
