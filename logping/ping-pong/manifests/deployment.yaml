@@ -15,4 +15,9 @@ spec:
     spec:
       containers:
       - name: ping-pong
-        image: kassudin/ping-pong:1.4
+        image: kassudin/ping-pong:1.5
+        env:
+          - name: PORT
+            value: "3000"
+          - name: DATABASE_URL
+            value: "postgresql://postgres:x@postgres-svc:5432/postgres"
