@@ -15,7 +15,12 @@ spec:
     spec:
       containers:
         - name: todo-backend
-          image: kassudin/todo-backend:1.1
+          image: kassudin/todo-backend:1.2
           env:
             - name: PORT
               value: "3000"
+            - name: DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: DATABASE_URL
