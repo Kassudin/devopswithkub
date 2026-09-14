@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
             - name: wikipedia-todo
-              image: kassudin/todo-backend:1.2
+              image: kassudin/todo-backend:1.
               command: ["python", "-u", "wikipedia_todo.py"]
               env:
                 - name: WIKIPEDIA_URL

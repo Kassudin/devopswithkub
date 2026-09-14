@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: todo-backend
-          image: kassudin/todo-backend:1.2
+          image: kassudin/todo-backend:1.3
           env:
             - name: PORT
               value: "3000"

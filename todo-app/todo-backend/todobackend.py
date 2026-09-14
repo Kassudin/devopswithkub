@@ -39,7 +39,9 @@ def get_todos():
 def add_todo():
     data = request.get_json()
     todo = data["todo"]
+    print(f"Todo received: {todo}", flush=True)
     if len (todo) > 140:
+        print(f"Todo rejected: {todo}", flush=True)
         return "Maximum length of todo is 140", 400
     connection = psycopg2.connect(database_url)
     cursor = connection.cursor()
@@ -54,4 +56,3 @@ if __name__ == "__main__":
     init_db()
     port = int(os.environ["PORT"])
     app.run(host="0.0.0.0", port=port)
-    
