@@ -58,6 +58,10 @@ def pingpong():
 def pings():
     return str(get_counter())
 
+@app.route("/")
+def index():
+    return "Works", 200
+
 if __name__ == "__main__":
     init_db()
     port = int(os.environ["PORT"])

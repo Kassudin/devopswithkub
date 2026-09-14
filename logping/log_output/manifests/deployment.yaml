@@ -29,7 +29,7 @@ spec:
           - name: shared-log
             mountPath: /usr/src/app/files
       - name: log-reader
-        image: kassudin/log-reader:1.5
+        image: kassudin/log-reader:1.6
         env:
         - name: MESSAGE
           valueFrom:
