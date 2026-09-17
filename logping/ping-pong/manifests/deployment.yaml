@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ping-pong
-        image: kassudin/ping-pong:1.6
+        image: kassudin/ping-pong:1.7
         env:
           - name: PORT
             value: "3000"

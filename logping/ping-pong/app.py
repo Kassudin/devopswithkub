@@ -38,7 +38,7 @@ def get_counter():
     return counter
 
 
-@app.route("/pingpong")
+@app.route("/")
 def pingpong():
     connection = psycopg2.connect(database_url)
     cursor = connection.cursor()
