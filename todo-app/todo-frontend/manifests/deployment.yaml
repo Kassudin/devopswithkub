@@ -19,7 +19,8 @@ spec:
             claimName: todo-claim
       containers:
       - name: todo-app
-        image: kassudin/todo-app:1.4
+        image: PROJECT/TODO-APP
+        imagePullPolicy: Always
         env:
           - name: IMAGE_URL
             value: "https://picsum.photos/1200"

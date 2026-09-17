@@ -62,6 +62,9 @@ def index():
         {todos_html}
     </ul>
     """
+@app.route("/")
+def health():
+    return "Works", 200
 
 if __name__ == "__main__":
     port = int(os.environ["PORT"])
