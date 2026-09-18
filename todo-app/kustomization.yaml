@@ -15,7 +15,6 @@ resources:
 images:
   - name: PROJECT/TODO-APP
     newName: kassudin/todo-app
-    newTag: "2.0"
 
   - name: PROJECT/TODO-BACKEND
     newName: kassudin/todo-backend
