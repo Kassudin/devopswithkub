@@ -12,7 +12,7 @@ env:
   GKE_CLUSTER: dwk-cluster
   GKE_ZONE: europe-north1-b
   REGISTRY: europe-north1-docker.pkg.dev
-  REPOSITORY: yes
+  REPOSITORY: dwk-project
   BRANCH: ${{ github.ref_name }}
 
 jobs:
