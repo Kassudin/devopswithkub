@@ -24,3 +24,11 @@ spec:
                 configMapKeyRef:
                   name: postgres-config
                   key: DATABASE_URL
+          # todo-backend
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "32Mi"
+            limits:
+              cpu: "100m"
+              memory: "64Mi"
