@@ -58,12 +58,19 @@ def pingpong():
 def pings():
     return str(get_counter())
 
-@app.route("/")
-def index():
-    return "Works", 200
+@app.route("/healthz")
+def health():
+    try:
+        init_db()
+        return "ok", 200
+    except psycopg2.OperationalError:
+        return "Can't connect database", 500
 
 if __name__ == "__main__":
-    init_db()
+    try:
+        init_db()
+    except psycopg2.OperationalError:
+        pass
     port = int(os.environ["PORT"])
     app.run(host="0.0.0.0", port=port)
     
