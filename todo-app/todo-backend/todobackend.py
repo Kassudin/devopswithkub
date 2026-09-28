@@ -1,11 +1,9 @@
 import os
-
 import psycopg2
 from flask import Flask, jsonify, request
-
 app = Flask(__name__)
-
 database_url = os.environ["DATABASE_URL"]
+is_healthy = True
 
 def init_db():
     connection = psycopg2.connect(database_url)
@@ -51,6 +49,26 @@ def add_todo():
     cursor.close()
     connection.close()
     return "Todo added", 201
+
+@app.route("/healthz")
+def health():
+    if not is_healthy:
+        return "Unhealthy", 500
+    try:
+        connection = psycopg2.connect(database_url)
+        cursor = connection.cursor()
+        cursor.execute("SELECT 1")
+        cursor.close()
+        connection.close()
+        return "Ok", 200
+    except psycopg2.Error:
+        return "Can't connect to database", 500
+
+@app.route("/break", methods=["POST"])
+def break_app():
+    global is_healthy
+    is_healthy = False
+    return "App broken", 200
 
 if __name__ == "__main__":
     init_db()
