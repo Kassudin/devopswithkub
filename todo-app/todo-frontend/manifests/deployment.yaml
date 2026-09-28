@@ -34,6 +34,8 @@ spec:
             value: "3000"
           - name: IMAGE_FILE
             value: "/usr/src/app/files/image.jpg"  
+          - name: BREAK_URL
+            value: "http://todo-backend-svc:2345/break"
         volumeMounts:
             - name: todo-volume
               mountPath: /usr/src/app/files
