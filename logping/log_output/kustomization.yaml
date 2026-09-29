@@ -8,7 +8,7 @@ resources:
 images:
 - name: PROJECT/LOG-OUTPUT-GENERATOR
   newName: kassudin/log-output-generator
-  newTag: 27e5e6f7ea114d9ef70ca8c2e67be7a5299fa0d0
+  newTag: 04e569c9b99c60fcdece8022f6061030325747ec
 - name: PROJECT/LOG-READER
   newName: kassudin/log-reader
-  newTag: 27e5e6f7ea114d9ef70ca8c2e67be7a5299fa0d0
+  newTag: 04e569c9b99c60fcdece8022f6061030325747ec
