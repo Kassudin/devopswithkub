@@ -43,6 +43,18 @@ def create_todo(todo):
     )
     urllib.request.urlopen(req)
 
+def update_todo(todo_id):
+    req = urllib.request.Request(
+        f"{backend_url}/{todo_id}",
+        method="PUT"
+    )
+    urllib.request.urlopen(req)
+
+@app.route("/todo/<int:todo_id>/done", methods=["POST"])
+def mark_done(todo_id):
+    update_todo(todo_id)
+    return redirect("/todo")
+
 def unhealthy_page():
     return """
     <html>
@@ -65,7 +77,25 @@ def index():
         create_todo(todo)
         return redirect("/todo")
     todos = get_todos()
-    todos_html = "".join(f"<li>{todo}</li>" for todo in todos)
+    todo_items = []
+    for todo in todos:
+        if todo["done"]:
+            todo_items.append(
+                f"<li>{todo['todo']} - Done</li>"
+            )
+        else:
+            todo_items.append(f"""
+                <li>
+                    {todo["todo"]}
+                    <form action="/todo/{todo["id"]}/done"
+                        method="POST"
+                        style="display:inline;">
+                        <button type="submit">Done</button>
+                    </form>
+                </li>
+            """)
+
+    todos_html = "".join(todo_items)
     return f"""
     <h1>Todo app</h1>
 
