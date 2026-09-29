@@ -24,12 +24,12 @@ spec:
                 path: information.txt
       containers:
       - name: log-generator
-        image: kassudin/log-output-generator:1.3
+        image: PROJECT/LOG-OUTPUT-GENERATOR
         volumeMounts:
           - name: shared-log
             mountPath: /usr/src/app/files
       - name: log-reader
-        image: kassudin/log-reader:1.7
+        image: PROJECT/LOG-READER
         readinessProbe:
           initialDelaySeconds: 10
           periodSeconds: 5
