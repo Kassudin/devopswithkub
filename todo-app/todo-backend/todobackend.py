@@ -12,7 +12,7 @@ def init_db():
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS todos (
             id SERIAL PRIMARY KEY,
-            todo TEXT NOT NULL
+            todo TEXT NOT NULL,
             done BOOLEAN NOT NULL DEFAULT FALSE
         )
     """)
