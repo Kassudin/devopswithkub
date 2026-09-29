@@ -13,9 +13,9 @@ def init_db():
         CREATE TABLE IF NOT EXISTS todos (
             id SERIAL PRIMARY KEY,
             todo TEXT NOT NULL
+            done BOOLEAN NOT NULL DEFAULT FALSE
         )
     """)
-
     connection.commit()
     cursor.close()
     connection.close()
@@ -24,13 +24,11 @@ def init_db():
 def get_todos():
     connection = psycopg2.connect(database_url)
     cursor = connection.cursor()
-
-    cursor.execute("SELECT todo FROM todos ORDER BY id")
+    cursor.execute("SELECT id, todo, done FROM todos ORDER BY id")
     rows = cursor.fetchall()
     cursor.close()
     connection.close()
-
-    todos = [row[0] for row in rows]
+    todos = [{"id": row[0], "todo": row[1], "done": row[2]} for row in rows]
     return jsonify(todos)
 
 @app.route("/todos", methods=["POST"])
@@ -49,6 +47,16 @@ def add_todo():
     cursor.close()
     connection.close()
     return "Todo added", 201
+
+@app.route("/todos/<int:todo_id>", methods=["PUT"])
+def update_todo(todo_id):
+    connection = psycopg2.connect(database_url)
+    cursor = connection.cursor()
+    cursor.execute("UPDATE todos SET done = TRUE WHERE id = %s",(todo_id,))
+    connection.commit()
+    cursor.close()
+    connection.close()
+    return "Todo updated", 200
 
 @app.route("/healthz")
 def health():
