@@ -2,19 +2,21 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - persistents/persistentvolumeclaim.yaml
-  - todo-backend/manifests/config.yaml
-  - todo-backend/manifests/cronjob.yaml
-  - todo-backend/manifests/deployment.yaml
-  - todo-backend/manifests/postgres.yaml
-  - todo-backend/manifests/service.yaml
-  - todo-frontend/manifests/deployment.yaml
-  - todo-frontend/manifests/service.yaml
-  - todo-frontend/manifests/ingress.yaml
+- persistents/persistentvolumeclaim.yaml
+- todo-backend/manifests/config.yaml
+- todo-backend/manifests/cronjob.yaml
+- todo-backend/manifests/deployment.yaml
+- todo-backend/manifests/postgres.yaml
+- todo-backend/manifests/service.yaml
+- todo-frontend/manifests/deployment.yaml
+- todo-frontend/manifests/service.yaml
+- todo-frontend/manifests/ingress.yaml
+
 
 images:
-  - name: PROJECT/TODO-APP
-    newName: kassudin/todo-app
-
-  - name: PROJECT/TODO-BACKEND
-    newName: kassudin/todo-backend
+- name: PROJECT/TODO-APP
+  newName: kassudin/todo-app
+  newTag: 38657ae71ec00dcbd63966034ba15d6dc2fbaa0e
+- name: PROJECT/TODO-BACKEND
+  newName: kassudin/todo-backend
+  newTag: 38657ae71ec00dcbd63966034ba15d6dc2fbaa0e
