@@ -46,7 +46,7 @@ def add_todo():
     connection.commit()
     cursor.close()
     connection.close()
-    return "Todo added", 201
+    return "Todo added!", 201
 
 @app.route("/todos/<int:todo_id>", methods=["PUT"])
 def update_todo(todo_id):
