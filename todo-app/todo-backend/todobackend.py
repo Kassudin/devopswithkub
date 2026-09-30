@@ -56,7 +56,7 @@ def update_todo(todo_id):
     connection.commit()
     cursor.close()
     connection.close()
-    return "Todo updated", 200
+    return "Todo updated!", 200
 
 @app.route("/healthz")
 def health():

@@ -3,7 +3,7 @@ name: Build and publish Todo app
 on:
   push:
     branches:
-      - "**"
+      - main
     paths:
       - "todo-app/**"
 
@@ -32,17 +32,25 @@ jobs:
           docker build --tag "kassudin/todo-backend:$GITHUB_SHA" ./todo-app/todo-backend
           docker push "kassudin/todo-backend:$GITHUB_SHA"
 
+      - name: Checkout configuration repository
+        uses: actions/checkout@v6
+        with:
+          repository: Kassudin/devopswithkub-config
+          token: ${{ secrets.CONFIG_REPO_TOKEN }}
+          path: config
+
       - name: Set up Kustomize
         uses: imranismail/setup-kustomize@v3
 
       - name: Use right images
-        working-directory: ./todo-app
+        working-directory: ./config/todo-app
         run: |-
           kustomize edit set image PROJECT/TODO-APP=kassudin/todo-app:$GITHUB_SHA
           kustomize edit set image PROJECT/TODO-BACKEND=kassudin/todo-backend:$GITHUB_SHA
 
-      - name: commit kustomization.yaml to GitHub
+      - name: Commit configuration
         uses: EndBug/add-and-commit@v10
         with:
+          cwd: './config'
           add: 'todo-app/kustomization.yaml'
           message: New Todo version released ${{ github.sha }}
