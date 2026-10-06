@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 output_file = "/usr/src/app/files/output.txt"
 information_file = "/config/information.txt"
-pingpongurl = "http://ping-pong-svc:80/pings"
+pingpongurl = "http://pingpong.exercises.svc.cluster.local"
 
 
 def read_file(path, default):
