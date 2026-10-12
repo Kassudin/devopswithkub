@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: ping-pong
+  namespace: exercises
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-pong
+  template:
+    metadata:
+      labels:
+        app: ping-pong
+    spec:
+      containers:
+      - name: ping-pong
+        image: kassudin/ping-pong:1.9
+        readinessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          httpGet:
+            path: /healthz
+            port: 3000
+        env:
+          - name: PORT
+            value: "3000"
+          - name: DATABASE_URL
+            value: "postgresql://postgres:x@postgres-svc:5432/postgres"
+
+  strategy:
+    canary:
+      steps:
+        - setWeight: 50
+        - pause:
+            duration: 10s
+        - analysis:
+            templates:
+              - templateName: cpu-analysis
