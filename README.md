@@ -52,7 +52,7 @@
 - [4.5.](https://github.com/kassudin/devopswithkub/tree/4.5/todo-app)
 - [4.7.](https://github.com/kassudin/devopswithkub/tree/4.7/.github)
 - [4.8.](https://github.com/kassudin/devopswithkub/tree/4.8/.github)
-- [4.8.](https://github.com/kassudin/devopswithkub/tree/4.10/.github)
+- [4.10.](https://github.com/kassudin/devopswithkub/tree/4.10/.github)
 
 ### Chapter 5
 - [5.2.](https://github.com/kassudin/devopswithkub/tree/5.2/pictures)
