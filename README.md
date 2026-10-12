@@ -1,3 +1,4 @@
+
 # KubernetesSubmissions
 
 ## exercises
@@ -21,6 +22,43 @@
 ### Chapter 2
 - [2.1.](https://github.com/kassudin/devopswithkub/tree/2.1/logping)
 - [2.2.](https://github.com/kassudin/devopswithkub/tree/2.2/todo-app)
+- [2.3.](https://github.com/kassudin/devopswithkub/tree/2.3/logping)
+- [2.4.](https://github.com/kassudin/devopswithkub/tree/2.4/todo-app)
+- [2.5.](https://github.com/kassudin/devopswithkub/tree/2.5/logping)
+- [2.6.](https://github.com/kassudin/devopswithkub/tree/2.6/todo-app)
+- [2.7.](https://github.com/kassudin/devopswithkub/tree/2.7/logping)
+- [2.8.](https://github.com/kassudin/devopswithkub/tree/2.8/todo-app)
+- [2.9.](https://github.com/kassudin/devopswithkub/tree/2.9/todo-app)
+- [2.10.](https://github.com/kassudin/devopswithkub/tree/2.10/logping)
+
+### Chapter 3
+- [3.1.](https://github.com/kassudin/devopswithkub/tree/3.1/logping)
+- [3.2.](https://github.com/kassudin/devopswithkub/tree/3.2/logping)
+- [3.3.](https://github.com/kassudin/devopswithkub/tree/3.3/logping)
+- [3.4.](https://github.com/kassudin/devopswithkub/tree/3.4/logping)
+- [3.5.](https://github.com/kassudin/devopswithkub/tree/3.5/todo-app)
+- [3.6.](https://github.com/kassudin/devopswithkub/tree/3.6/todo-app)
+- [3.7.](https://github.com/kassudin/devopswithkub/tree/3.7/todo-app)
+- [3.8.](https://github.com/kassudin/devopswithkub/tree/3.8/todo-app)
+- [3.9.](https://github.com/kassudin/devopswithkub/tree/3.9)
+- [3.11.](https://github.com/kassudin/devopswithkub/tree/3-11/todo-app)
+- [3.11.](https://github.com/kassudin/devopswithkub/tree/3-12/todo-app)
+
+### Chapter 4
+- [4.1.](https://github.com/kassudin/devopswithkub/tree/4-1/logping)
+- [4.2.](https://github.com/kassudin/devopswithkub/tree/4-2/todo-app)
+- [4.3.](https://github.com/kassudin/devopswithkub/tree/4-3/todo-app/pictures)
+- [4.4.](https://github.com/kassudin/devopswithkub/tree/4.4/logping)
+- [4.5.](https://github.com/kassudin/devopswithkub/tree/4-5/todo-app)
+- [4.7.](https://github.com/kassudin/devopswithkub/tree/4-7/.github)
+- [4.8.](https://github.com/kassudin/devopswithkub/tree/4.8/.github)
+- [4.8.](https://github.com/kassudin/devopswithkub/tree/4.10/.github)
+
+### Chapter 5
+- [5.2.](https://github.com/kassudin/devopswithkub/tree/5.2/pictures)
+- [5.3.](https://github.com/kassudin/devopswithkub/tree/5.3/logping)
+- [5.6.](https://github.com/kassudin/devopswithkub/tree/5.6/knative)
+- [5.7.](https://github.com/kassudin/devopswithkub/tree/5.7/logping)
 
 
 
