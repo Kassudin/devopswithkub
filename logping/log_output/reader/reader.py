@@ -8,6 +8,7 @@ app = Flask(__name__)
 output_file = "/usr/src/app/files/output.txt"
 information_file = "/config/information.txt"
 pingpongurl = "http://ping-pong-svc:80/pings"
+greeterurl = "http://greeter-svc/"
 
 
 def read_file(path, default):
@@ -34,10 +35,12 @@ def index():
     )
     message = os.environ.get("MESSAGE", "")
     counter = get_pong_count()
+    greeting = requests.get(greeterurl, timeout=2).text
     return (
         f"file content: {information}\n"
         f"env variable: MESSAGE={message}\n"
         f"{output}\n"
+        f"greeting from greeter: {greeting}\n"
         f"Ping / Pongs: {counter}\n"
     )
 
