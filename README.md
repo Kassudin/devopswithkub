@@ -1,3 +1,61 @@
+# How to run Todo app
+
+Go to:
+https://github.com/Kassudin/devopswithkub-config
+
+Clone the repository and enter the Todo Project directory:
+```bash
+git clone https://github.com/Kassudin/devopswithkub-config.git
+cd devopswithkub-config/todo-app
+```
+Create the project namespace
+```bash
+kubectl create namespace project
+```
+Apply the manifests
+```bash
+kubectl apply -k .
+```
+# How to run logping
+Clone this repository
+```bash
+git clone https://github.com/Kassudin/devopswithkub.git
+cd devopswithkub/logping
+```
+create namespace
+```bash
+kubectl create namespace exercises
+```
+Inside `logping`
+Deploy log output
+```bash
+kubectl apply -k log_output/
+```
+and Knative + PostgreSQL ( Requires a Kubernetes cluster with Knative Serving installed)
+```bash
+kubectl apply -f ping-pong/manifests/postgres.yaml
+kubectl apply -f ping-pong/manifests/service.yaml
+kubectl apply -f ping-pong/manifests/knativeping.yaml
+```
+To run Ping-pong without serverless, checkout version `5.6` 
+```bash
+git checkout 5.6
+```
+and deploy the manifests
+```bash
+kubectl apply -f ping-pong/manifests/
+```
+
+
+
+
+
+
+
+
+
+
+
 
 # KubernetesSubmissions
 
