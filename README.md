@@ -42,7 +42,7 @@
 - [3.8.](https://github.com/kassudin/devopswithkub/tree/3.8/todo-app)
 - [3.9.](https://github.com/kassudin/devopswithkub/tree/3.9)
 - [3.11.](https://github.com/kassudin/devopswithkub/tree/3.11/todo-app)
-- [3.11.](https://github.com/kassudin/devopswithkub/tree/3.12/todo-app)
+- [3.12.](https://github.com/kassudin/devopswithkub/tree/3.12/todo-app)
 
 ### Chapter 4
 - [4.1.](https://github.com/kassudin/devopswithkub/tree/4.1/logping)
