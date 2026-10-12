@@ -41,16 +41,16 @@
 - [3.7.](https://github.com/kassudin/devopswithkub/tree/3.7/todo-app)
 - [3.8.](https://github.com/kassudin/devopswithkub/tree/3.8/todo-app)
 - [3.9.](https://github.com/kassudin/devopswithkub/tree/3.9)
-- [3.11.](https://github.com/kassudin/devopswithkub/tree/3-11/todo-app)
-- [3.11.](https://github.com/kassudin/devopswithkub/tree/3-12/todo-app)
+- [3.11.](https://github.com/kassudin/devopswithkub/tree/3.11/todo-app)
+- [3.11.](https://github.com/kassudin/devopswithkub/tree/3.12/todo-app)
 
 ### Chapter 4
-- [4.1.](https://github.com/kassudin/devopswithkub/tree/4-1/logping)
-- [4.2.](https://github.com/kassudin/devopswithkub/tree/4-2/todo-app)
-- [4.3.](https://github.com/kassudin/devopswithkub/tree/4-3/todo-app/pictures)
+- [4.1.](https://github.com/kassudin/devopswithkub/tree/4.1/logping)
+- [4.2.](https://github.com/kassudin/devopswithkub/tree/4.2/todo-app)
+- [4.3.](https://github.com/kassudin/devopswithkub/tree/4.3/todo-app/pictures)
 - [4.4.](https://github.com/kassudin/devopswithkub/tree/4.4/logping)
-- [4.5.](https://github.com/kassudin/devopswithkub/tree/4-5/todo-app)
-- [4.7.](https://github.com/kassudin/devopswithkub/tree/4-7/.github)
+- [4.5.](https://github.com/kassudin/devopswithkub/tree/4.5/todo-app)
+- [4.7.](https://github.com/kassudin/devopswithkub/tree/4.7/.github)
 - [4.8.](https://github.com/kassudin/devopswithkub/tree/4.8/.github)
 - [4.8.](https://github.com/kassudin/devopswithkub/tree/4.10/.github)
 
