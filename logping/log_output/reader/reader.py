@@ -49,7 +49,7 @@ def health():
             return "OK", 200
     except requests.RequestException:
         pass
-    return "Ping-pong unavailable", 500
+    return "Ping-pong unavailable!", 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 3000))
