@@ -37,14 +37,7 @@ kubectl apply -f ping-pong/manifests/postgres.yaml
 kubectl apply -f ping-pong/manifests/service.yaml
 kubectl apply -f ping-pong/manifests/knativeping.yaml
 ```
-To run Ping-pong without serverless, checkout version `5.6` 
-```bash
-git checkout 5.6
-```
-and deploy the manifests
-```bash
-kubectl apply -f ping-pong/manifests/
-```
+
 
 
 
