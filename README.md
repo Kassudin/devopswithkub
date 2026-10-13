@@ -1,6 +1,6 @@
 # How to run Todo app
 
-Go to:
+Yaml files can be found in:
 https://github.com/Kassudin/devopswithkub-config
 
 Clone the repository and enter the Todo Project directory:
@@ -16,6 +16,8 @@ Apply the manifests
 ```bash
 kubectl apply -k .
 ```
+If the cluster was created with port 8081 mapped to the load balancer, you can access the site by going http://localhost:8081/todo
+
 # How to run logping
 Clone this repository
 ```bash
@@ -37,6 +39,31 @@ kubectl apply -f ping-pong/manifests/postgres.yaml
 kubectl apply -f ping-pong/manifests/service.yaml
 kubectl apply -f ping-pong/manifests/knativeping.yaml
 ```
+The pingpong service is serverless. Setup uses kourier for networking layer and sslip.io for DNS. Instructions can be found here:
+https://knative.dev/docs/install/yaml-install/serving/install-serving-with-yaml/
+
+To get the URL
+```bash
+kubectl get ksvc -n exercises
+```
+For example if the command returns:
+http://pingpong.exercises.172.23.0.3.sslip.io
+
+You can trigger pings with
+
+
+```bash
+curl -H "Host: pingpong.exercises.172.23.0.3.sslip.io" http://localhost:8081/pings
+```
+
+To access Log Output, you need to port forward its sercivce.
+```bash
+kubectl port-forward -n exercises svc/log-output-svc 8083:80
+```
+Then open:
+http://localhost:8083
+
+
 
 
 
